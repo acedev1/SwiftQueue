@@ -60,7 +60,7 @@ internal final class SwiftQueue: OperationQueue {
         }
 
         do {
-            try job.checkConstraintsOnSchedule(queue: self)
+            try Constraints.checkConstraintsOnSchedule(queue: self, operation: job)
         } catch (let error) {
             job.abort(error: error)
             return
