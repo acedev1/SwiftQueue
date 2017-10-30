@@ -111,6 +111,12 @@ public enum RetryConstraint {
     case exponential(initial: TimeInterval)
 }
 
+public enum NetworkType: Int {
+    case any = 0
+    case cellular =  1
+    case wifi =  2
+}
+
 public protocol Job {
 
     func onRun(callback: JobResult) throws
@@ -120,5 +126,3 @@ public protocol Job {
     func onRemove(error: Swift.Error?)
 
 }
-
-public class Canceled: Swift.Error {}
